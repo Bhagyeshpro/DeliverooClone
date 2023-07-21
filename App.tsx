@@ -3,8 +3,8 @@ import React from 'react'
 
 const App = () => {
   return (
-    <View>
-       <Text className="text-2xl text-black dark:text-white">dev</Text>
+    <View className="bg-cyan-300 flex-1 justify-center items-center">
+       <Text className="text-2xl text-black font-bold dark:text-gray">dev</Text>
     </View>
   )
 }
