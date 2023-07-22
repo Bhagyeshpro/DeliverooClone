@@ -10,5 +10,11 @@ const Styles = {
     textSmall: 'text-gray-400 font-bold text-base',
     textMedium: 'text-black font-bold text-2xl',
     textExtraLarge: 'text-black font-bold text-4xl', 
+
+    Colors : {
+        blue: "#00CDBC",
+        white: "#ffffff"
+    }
 }
+
 export default Styles;
