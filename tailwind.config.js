@@ -9,6 +9,8 @@ module.exports = {
 
     "./src/components/Header.{js,jsx,ts,tsx}",
     "./src/components/Categories.{js,jsx,ts,tsx}",
+    "./src/components/FeaturedRow.{js,jsx,ts,tsx}",
+    "./src/components/RestaurantCards.{js,jsx,ts,tsx}",
     
   ],
   theme: {

@@ -1,12 +1,14 @@
-import { StyleSheet, Text, View, SafeAreaView, Image, TextInput, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, TextInput, ScrollView } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 
 import Styles from '../styles/Styles'
 import Header from '../components/Header'
+import Categories from '../components/Categories'
+
 import SearchIcon from 'react-native-vector-icons/FontAwesome';
 import MenuIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Categories from '../components/Categories'
+import FeaturedRow from '../components/FeaturedRow'
 
 
 const HomeScreen = () => {
@@ -20,41 +22,66 @@ const HomeScreen = () => {
 
   return (
     <SafeAreaView className="bg-white">
+      <ScrollView>
 
-      {/* Header */}
-      <Header />
-      {/* <View className="-border-b-1 border-gray-200" />       */}
+        {/* Header */}
+        <Header />
+        {/* <View className="-border-b-1 border-gray-200" />       */}
 
-      <View className="flex-row mr-3 items-center">
-        <View className="flex-row flex-1 items-center px-3 h-10 bg-gray-200 mx-3 rounded-sm">
-          <SearchIcon name="search" size={18} color="#888" style="" />
-          <TextInput
-            placeholder="Restaurant and cuisines"
-            placeholderTextColor="#888"
-            className="flex-1 bg-transparent ml-2 text-xl font-semibold text-black"
-          />
+
+
+        <View className="flex-row mr-3 mt-1 items-center">
+          <View className="flex-row flex-1 items-center px-3 h-10 bg-gray-200 mx-3 rounded-sm">
+            <SearchIcon name="search" size={18} color="#888" style="" />
+            <TextInput
+              placeholder="Restaurant and cuisines"
+              placeholderTextColor="#888"
+              className="flex-1 bg-transparent ml-2 text-xl font-semibold text-black"
+            />
+          </View>
+          <MenuIcon name="menu" size={25} color={Styles.Colors.blue} />
         </View>
-        <MenuIcon name="menu" size={25} color={Styles.Colors.blue} />
-      </View>
 
-      {/* Category */}
-      <ScrollView
-        contentContainerStyle={{
-          paddingLeft: 13,
-          paddingTop: 10
-        }}
-        showsHorizontalScrollIndicator={false}
-        horizontal
-      >
-        <Categories />
-        <Categories />
-        <Categories />
-        <Categories />
-        <Categories />
-        <Categories />
+        {/* Category */}
+        <ScrollView
+          contentContainerStyle={{
+            paddingLeft: 13,
+            paddingTop: 15
+          }}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+        >
+          <Categories title="Cake" imgURL="https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'" />
+          <Categories title="Cake" imgURL="https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'" />
+          <Categories title="Cake" imgURL="https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'" />
+          <Categories title="Cake" imgURL="https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'" />
+          <Categories title="Cake" imgURL="https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'" />
+          <Categories title="Cake" imgURL="https://images.unsplash.com/photo-1607478900766-efe13248b125?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGNha2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'" />
+        </ScrollView>
+
+        {/* Featured Row */}
+        <FeaturedRow
+          title="Featured"
+          description="Featured Tonight"
+          featuredCategory="featured"
+        />
+
+        <FeaturedRow
+          title="Tasty Discounts!"
+          description="Everyone's been enjoying these juicy discounts!"
+          featuredCategory="discounts"
+        />
+
+        {/* Offers Near You */}
+        <FeaturedRow
+          title="Offers Near You!"
+          description="Why not support your local Restaurant tonight!"
+          featuredCategory="offers"
+        />
+        
+        <View className="mb-3"></View>
 
       </ScrollView>
-
     </SafeAreaView>
   )
 }

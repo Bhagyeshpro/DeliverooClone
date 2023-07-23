@@ -7,8 +7,8 @@ import { StyleSheet } from 'react-native';
 // });
 
 const Styles = {
-    textSmall: 'text-gray-400 font-bold text-base',
-    textMedium: 'text-black font-bold text-2xl',
+    textSmall: 'text-gray-400 text-base',
+    textMedium: 'text-black font-bold text-xl',
     textExtraLarge: 'text-black font-bold text-4xl', 
 
     Colors : {
